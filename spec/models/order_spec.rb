@@ -32,4 +32,8 @@ RSpec.describe Order, type: :model do
     expect(subject.order_items).to_not be_nil
   end
 
+  it "can have many products" do
+    expect(subject.products).to_not be_nil
+  end
+  
 end

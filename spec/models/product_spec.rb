@@ -30,6 +30,16 @@ RSpec.describe Product, type: :model do
             it 'is present in many categories' do
                 expect(subject.categories).to_not be_nil
             end
+
+            it "its present in many order items" do
+                expect(subject.order_items).to_not be_nil
+            end
+
+            it "its present in many orders" do
+                expect(subject.orders).to_not be_nil
+            end
+            
+            
         end
 
     end
