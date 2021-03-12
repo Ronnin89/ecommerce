@@ -24,14 +24,4 @@ RSpec.describe OrderItem, type: :model do
       expect(subject).to_not be_valid  
    end
 
-   it 'price cant be less than 10' do
-      subject.price = 9
-      expect(subject).to_not be_valid 
-   end
-   
-   it 'quantity cant be less than 1' do
-      subject.quantity = 0
-      expect(subject).to_not be_valid 
-   end
-
 end

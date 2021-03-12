@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2021_03_11_233557) do
     t.bigint "user_id"
     t.string "number"
     t.decimal "total"
-    t.string "state"
+    t.boolean "state", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_orders_on_user_id"

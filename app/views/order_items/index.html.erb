@@ -1,0 +1,29 @@
+<h2>Carrito de compras</h2>
+
+<% if @order.nil? || @order.order_items.length == 0 %>
+    <p>No hay productos</p>
+<% else %>
+<table>
+    <thead>
+        <th>Nombre del Producto</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Precio Total por producto</th>
+    </thead>
+    <tbody>
+        <% @order.order_items.each do |item| %>
+            <tr>
+                <td><%= item.product.name %></td>
+                <td><%= item.quantity %></td>
+                <td><%= number_to_currency(item.product.price, precision: 0, unit: 'CLP$', delimiter: '.') %></td>
+                <td><%= number_to_currency(item.price, precision: 0, unit: 'CLP$', delimiter: '.') %></td>
+                <td><%= link_to "quitar del carrito", destroy_item_path(item), method: :delete %></td>
+            </tr>
+        <% end %>
+        <tr>
+            <td colspan="3" style="text-align: right;">Total</td>
+            <td><strong><%= number_to_currency(@order.total, precision: 0, unit: 'CLP$', delimiter: '.') %></strong></td>
+        </tr>
+    </tbody>
+</table>
+<% end %>
