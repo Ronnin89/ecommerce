@@ -2,6 +2,19 @@
 
 <h1>Products</h1>
 
+<%= colmun_chart @products.pluck(:name, :quant), title: 'stock productos', label %>
+<%# <!-- Entregandole los datos de la variable -->
+  <%= column_chart @products.pluck(:name, :quant), label: "cantidad", xtitle: "Productos", ytitle: "Cantidad", colors: ["#98FB98"], messages: {empty: "No hay datos :("}  %>
+
+<!-- Grafico redondo desde un metodo en el controlador -->
+  <%# <%= pie_chart @product_per_category, label: "cantidad" , title: "Distribucion de productos por categoria", messages: {empty: "Aun no hay categorias"} %>
+
+
+  <%# <% hogar = {name: "hogar", data: [['2021-03-01', 10], ['2021-03-02', 12], ['2021-03-03', 9]]} %> %>
+  <%# <% computacion = {name: "computacion", data: [['2021-03-01', 10], ['2021-03-02', 15], ['2021-03-03', 19]]} %> %>
+  <%# <% datos = [hogar, computacion] %> %> %> %>
+
+
 <table>
   <thead>
     <tr>
